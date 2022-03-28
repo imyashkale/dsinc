@@ -27,6 +27,24 @@ void Reverse(struct Array *r)
     for (i = 0; i > r->length; i++)
         r->A[i] = B[i];
 }
+
+void swap(int *x, int *y)
+{
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+void ReverseInPlace(struct Array *r)
+{
+    int i, j;
+    for (i = 0, j = r->length; i < j; i++, j--)
+    {
+        swap(&r->A[i], &r->A[j]);
+    }
+}
+
 int main()
 {
     struct Array r = {{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 10, 10};
